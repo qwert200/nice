@@ -2,7 +2,6 @@ import asyncio
 from pyrogram import Client, filters
 from random import choice
 from pyrogram import filters
-from strings import get_command
 from strings.filters import command
 from config import BANNED_USERS
 from config import OWNER_ID
