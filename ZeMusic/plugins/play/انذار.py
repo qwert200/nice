@@ -33,8 +33,23 @@ async def tom(client, message):
         	await client.ban_chat_member(chat_id, user_id)
         	await message.reply("تم طرد العضو")   	
         except:
-        	await message.reply("لم يتم مظر العضو")
+        	await message.reply("لم يتم حظر العضو")
         
         
 
-
+@app.on_message(filters.command("حظر", "طرد"))
+async def tom(client, message):
+    me = message.from_user.id
+    user_id = message.reply_to_message.from_user.id
+    chat_id = message.chat.id
+    if chat_id not in ahmed:
+        ahmed[chat_id] = {}
+    await message.reply_text(f"{ahmed[chat_id][user_id]}")
+    if ahmed[chat_id][user_id] >= tom_max:
+        try:
+        	del ahmed[chat_id][user_id]
+        	await client.ban_chat_member(chat_id, user_id)
+        	await message.reply("تم طرد العضو")   	
+        except:
+        	await message.reply("لم يتم حظر العضو")
+        
