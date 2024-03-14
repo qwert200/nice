@@ -5,7 +5,7 @@ from strings.filters import command
 from ZeMusic import app
 from telegraph import upload_file
 
-@app.on_message(command(["تليجراف ميديا","ميديا"]))
+@app.on_message(command(["تليجراف ميديا","ميديا","tgm","تلجراف"]))
 async def get_link_group(client, message):
     try:
         text = await message.reply("Processing...")
