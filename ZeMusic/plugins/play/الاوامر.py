@@ -213,7 +213,7 @@ async def cr_usage(_, callback_query: CallbackQuery):
 async def cr_usage(_, callback_query: CallbackQuery):
     await callback_query.answer()
     await callback_query.message.edit_text(
-        text==f"""**- قائمة الاوامر
+        text="""**- قائمة الاوامر
         
  — — — — — — — — — — 
 - م1 ( اوامر التشغيل )
