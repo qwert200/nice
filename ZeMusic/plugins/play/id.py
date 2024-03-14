@@ -101,7 +101,6 @@ def get_file_id(msg: Message):
 @app.on_message(
     command(["ايدي","id","ا"])
     & filters.group
-    & ~filters.edited
 )
 async def iddd(client, message):
     if message.chat.id in iddof:
