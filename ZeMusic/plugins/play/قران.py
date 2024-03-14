@@ -15,7 +15,11 @@ from config import get_bot_information
 ## Dev By: @WWWL5 & @MRv7x  ##
 ################################
 
-@Client.on_callback_query(filters.regex("^quran (\\d+)$"))
+@app.on_message(
+    filters.command(["/قران"])
+ 
+   
+)
 async def quran(c: Client, m: Message):
     global mid
     mid = m.message_id
