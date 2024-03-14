@@ -1,17 +1,20 @@
 import asyncio
 from pyrogram import Client, filters
+from random import choice
+from pyrogram import filters
+from strings import get_command
 from strings.filters import command
-from ZeMusic.utils.decorators import AdminActual
-from pyrogram.types import (
-    CallbackQuery,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    ReplyKeyboardMarkup,
-    ReplyKeyboardRemove,
-    InputMediaPhoto,
-    Message,
-)
+from config import BANNED_USERS
+from config import OWNER_ID
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import (InlineKeyboardButton,CallbackQuery,
+                            InlineKeyboardMarkup, Message)
 from ZeMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from typing import Union
+from pyrogram.types import InlineKeyboardButton
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove, Message, ChatJoinRequest
+
+
 
 
 REPLY_MESSAGE = "**- اهلا بك عزيزي اليك قائمه الاوامر**"
@@ -53,7 +56,7 @@ REPLY_MESSAGE_BUTTONS = [
 
   
 
-@app.on_message(filters.regex("^الاوامر$"))
+@app.on_message(filters.regex("^/AM$"))
 async def cpanel(_, message: Message):             
         text = REPLY_MESSAGE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, resize_keyboard=True, selective=True)
