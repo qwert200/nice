@@ -16,8 +16,49 @@ from pyrogram.errors import MessageNotModified
 
 
 @app.on_message(
-    command("")
+    command("الاوامر")
 )
+async def cr_source(client: Client, message: Message):
+    await message.reply_photo(
+      photo=f"https://telegra.ph/file/41a777f089288f7ad2571.jpg",
+        caption=f"""**- قائمة الاوامر
+        
+ — — — — — — — — — — 
+- م1 ( اوامر التشغيل )
+- م2 ( اوامر التفعيل )
+- م3 ( اوامر القفل - الفتح )
+- م4 ( اوامر الالعاب )
+- م5 ( اوامر التسليه )""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "‹ اوامر التشغيل ›", callback_data="gr"),
+                    InlineKeyboardButton(
+                        "‹ اوامر التفعيل ›", callback_data="ch"),  
+                 ],[
+                    InlineKeyboardButton(
+                        "‹ فتح - قفل ›", callback_data="yyy"), 
+                 ],[
+                    InlineKeyboardButton(
+                        "‹ اوامر الالعاب ›", callback_data="adm"), 
+                InlineKeyboardButton(
+                        "‹ اوامر التسليه ›", callback_data="hmd"), 
+                 ],[       
+                       
+                    InlineKeyboardButton(
+                        "‹ السورس ›", url=f"https://t.me/Source_Ze"),
+                ],
+
+            ]
+
+        ),
+
+    )
+
+
+
+@app.on_callback_query(filters.regex("qr"))
 async def cr_source(client: Client, message: Message):
     await message.reply_photo(
       photo=f"https://telegra.ph/file/41a777f089288f7ad2571.jpg",
@@ -47,7 +88,7 @@ async def cr_source(client: Client, message: Message):
                  ],[       
                        
                     InlineKeyboardButton(
-                        "‹ السورس ›", url=f"https://t.me/Source_Ze"),
+                        "‹ السورس ›", url=f"https://t.me/ah07v"),
                 ],
 
             ]
@@ -55,6 +96,7 @@ async def cr_source(client: Client, message: Message):
         ),
 
     )
+
 
     
 @app.on_callback_query(filters.regex("gr"))
@@ -85,7 +127,7 @@ async def cr_usage(_, callback_query: CallbackQuery):
                     
                 ],[
                     InlineKeyboardButton(
-                        "‹ الرئيسية ›", callback_data="الاوامر"), 
+                        "‹ الرئيسية ›", callback_data="qr"), 
                     
                 ]
             ]
@@ -125,7 +167,7 @@ async def cr_usage(_, callback_query: CallbackQuery):
                         "‹ رجوع ›", callback_data="gr"), 
                 ],[
                     InlineKeyboardButton(
-                        "‹ الرئيسية ›", callback_data="الاوامر"), 
+                        "‹ الرئيسية ›", callback_data="qr"), 
                     
                 ]
             ]
@@ -161,7 +203,7 @@ async def cr_usage(_, callback_query: CallbackQuery):
                         "‹ رجوع ›", callback_data="ch"), 
                 ],[
                     InlineKeyboardButton(
-                        "‹ الرئيسية ›", callback_data="الاوامر"), 
+                        "‹ الرئيسية ›", callback_data="qr"), 
                     
                 ]
             ]
@@ -198,7 +240,7 @@ async def cr_usage(_, callback_query: CallbackQuery):
                         "‹ رجوع ›", callback_data="adm"), 
                 ],[
                     InlineKeyboardButton(
-                        "‹ الرئيسية ›", callback_data="الاوامر"), 
+                        "‹ الرئيسية ›", callback_data="qr"), 
                     
                 ]
             ]
