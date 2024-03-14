@@ -47,47 +47,6 @@ async def cr_source(client: Client, message: Message):
                  ],[       
                        
                     InlineKeyboardButton(
-                        "‹ السورس ›", url=f"https://t.me/Source_Ze"),
-                ],
-
-            ]
-
-        ),
-
-    )
-
-
-
-@app.on_callback_query(filters.regex("qr"))
-async def cr_usage(_, callback_query: CallbackQuery):
-    await callback_query.answer()
-    await callback_query.message.edit_text(
-        text==f"""**- قائمة الاوامر
-        
- — — — — — — — — — — 
-- م1 ( اوامر التشغيل )
-- م2 ( اوامر التفعيل )
-- م3 ( اوامر القفل - الفتح )
-- م4 ( اوامر الالعاب )
-- م5 ( اوامر التسليه )""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "‹ ااوامر التشغيل ›", callback_data="gr"),
-                    InlineKeyboardButton(
-                        "‹ اوامر التفعيل ›", callback_data="ch"),  
-                 ],[
-                    InlineKeyboardButton(
-                        "‹ فتح - قفل ›", callback_data="yyy"), 
-                 ],[
-                    InlineKeyboardButton(
-                        "‹ اوامر الالعاب ›", callback_data="adm"), 
-                InlineKeyboardButton(
-                        "‹ اوامر التسليه ›", callback_data="hmd"), 
-                 ],[       
-                       
-                    InlineKeyboardButton(
                         "‹ السورس ›", url=f"https://t.me/ah07v"),
                 ],
 
@@ -96,6 +55,8 @@ async def cr_usage(_, callback_query: CallbackQuery):
         ),
 
     )
+
+
 
 
     
@@ -247,3 +208,42 @@ async def cr_usage(_, callback_query: CallbackQuery):
         )
     )
   
+
+@app.on_callback_query(filters.regex("qr"))
+async def cr_usage(_, callback_query: CallbackQuery):
+    await callback_query.answer()
+    await callback_query.message.edit_text(
+        text==f"""**- قائمة الاوامر
+        
+ — — — — — — — — — — 
+- م1 ( اوامر التشغيل )
+- م2 ( اوامر التفعيل )
+- م3 ( اوامر القفل - الفتح )
+- م4 ( اوامر الالعاب )
+- م5 ( اوامر التسليه )""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "‹ ااوامر التشغيل ›", callback_data="gr"),
+                    InlineKeyboardButton(
+                        "‹ اوامر التفعيل ›", callback_data="ch"),  
+                 ],[
+                    InlineKeyboardButton(
+                        "‹ فتح - قفل ›", callback_data="yyy"), 
+                 ],[
+                    InlineKeyboardButton(
+                        "‹ اوامر الالعاب ›", callback_data="adm"), 
+                InlineKeyboardButton(
+                        "‹ اوامر التسليه ›", callback_data="hmd"), 
+                 ],[       
+                       
+                    InlineKeyboardButton(
+                        "‹ السورس ›", url=f"https://t.me/ah07v"),
+                ],
+
+            ]
+
+        ),
+
+    )
