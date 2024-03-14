@@ -59,10 +59,10 @@ async def cr_source(client: Client, message: Message):
 
 
 @app.on_callback_query(filters.regex("qr"))
-async def cr_source(client: Client, message: Message):
-    await message.reply_photo(
-      photo=f"https://telegra.ph/file/41a777f089288f7ad2571.jpg",
-        caption=f"""**- قائمة الاوامر
+async def cr_usage(_, callback_query: CallbackQuery):
+    await callback_query.answer()
+    await callback_query.message.edit_text(
+        text==f"""**- قائمة الاوامر
         
  — — — — — — — — — — 
 - م1 ( اوامر التشغيل )
