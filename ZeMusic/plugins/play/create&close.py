@@ -40,7 +40,7 @@ async def start_group_call(c: Client, m: Message):
     if assistant is None:
         await app.send_message(chat_id, "خطأ في المساعد")
         return
-    msg = await app.send_message(chat_id, "جاري تشغيل المكالمه..")
+    msg = await app.send_message(chat_id, "جاري فتح المكالمه..")
     try:
         peer = await assistant.resolve_peer(chat_id)
         await assistant.invoke(
@@ -89,7 +89,7 @@ async def start_group_call(c: Client, m: Message):
         )                              
         await msg.edit_text("تم فتح المكالمه بنجاح ⚡️~!")
       except:
-         await msg.edit_text("خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او خلي الاك المساعد رول وجرب ⚡")
+         await msg.edit_text("امنح البوت صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او ارفع المساعد مشرف  ⚡")
 @app.on_message(filters.regex("^اقفل المكالمه$"))
 async def stop_group_call(c: Client, m: Message):
     chat_id = m.chat.id
@@ -143,5 +143,5 @@ async def stop_group_call(c: Client, m: Message):
          )                              
          await msg.edit_text("تم اغلاق المكالمه بنجاح ⚡️~!")
        except:
-         await msg.edit_text("خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او خلي الاك المساعد عنده صلاحية رفع مشرفين وجرب")
+         await msg.edit_text("امنح البوت صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او ارفع المساعد مشرف")
     
