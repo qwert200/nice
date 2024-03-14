@@ -98,21 +98,18 @@ def get_file_id(msg: Message):
 
     #)
 
-@app.on_message(filters.regex("^ا$") & filters.group)
-async def khalid(client: Client, message: Message):
-
+@app.on_message(
+    command(["ايدي","id","ا"])
+    & filters.group
+    & ~filters.edited
+)
+async def iddd(client, message):
+    if message.chat.id in iddof:
+      return
     usr = await client.get_chat(message.from_user.id)
-
     name = usr.first_name
-
-    bio = usr.bio
-
-
-
-
-    async for photo in client.iter_profile_photos(message.from_user.id, limit=1):
-
-                    await message.reply_photo(photo.file_id,       caption=f"""**↯ : وفي النهاية أنتم السيئون وهم الأبرياء**
+    photo = await app.download_media(usr.photo.big_file_id)
+    await message.reply_photo(photo,       caption=f"""**↯ : وفي النهاية أنتم السيئون وهم الأبرياء**
             
 **↯ : اسمك : › {message.from_user.mention}**
                     
@@ -130,7 +127,7 @@ async def khalid(client: Client, message: Message):
 
                     InlineKeyboardButton(
 
-                                            name, user_id=6581896306)
+                                            name, user_id=1748768168)
                 ],
 
             ]
