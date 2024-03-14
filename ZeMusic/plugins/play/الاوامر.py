@@ -225,7 +225,7 @@ async def cr_usage(_, callback_query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "‹ ااوامر التشغيل ›", callback_data="gr"),
+                        "‹ اوامر التشغيل ›", callback_data="gr"),
                     InlineKeyboardButton(
                         "‹ اوامر التفعيل ›", callback_data="ch"),  
                  ],[
