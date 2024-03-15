@@ -39,7 +39,7 @@ async def quran2(c: Client, m: Message):
     await m.message.edit_text("◍ اهلا بيك بقائمه القراء اختر ما تريد\n√", reply_markup=keyboard)
 
 
-@Client.on_callback_query(filters.regex("^quran (\\d+)$"))
+@app.on_callback_query(filters.regex("^quran (\\d+)$"))
 async def quran(c: Client, m: Message):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -63,7 +63,7 @@ async def quran(c: Client, m: Message):
     await m.reply_text("◍ اهلا بك فى القرءان الكريم اختر احدى المقرئين\n√", reply_markup=keyboard)
 
 
-@Client.on_callback_query(filters.regex("^quran2 (\\d+)$"))
+@app.on_callback_query(filters.regex("^quran2 (\\d+)$"))
 async def quran2(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -90,7 +90,7 @@ async def quran2(c: Client, m: CallbackQuery):
 ########################################################################################################################
 ########################################################################################################################
 
-@Client.on_callback_query(filters.regex("^fares (\\d+)$"))
+@app.on_callback_query(filters.regex("^fares (\\d+)$"))
 async def fares(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -158,7 +158,7 @@ async def fares(c: Client, m: CallbackQuery):
     await m.message.edit_text("◍ اختر سوره للقارئ فارس عباد\n√", reply_markup=keyboard, disable_web_page_preview=True)
 
 
-@Client.on_callback_query(filters.regex("^fares2 (\\d+)$"))
+@app.on_callback_query(filters.regex("^fares2 (\\d+)$"))
 async def fares2(c: Client, m: CallbackQuery):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
