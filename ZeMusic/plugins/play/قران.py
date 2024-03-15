@@ -58,7 +58,7 @@ async def quran(c: Client, m: Message):
         [InlineKeyboardButton("ماهر المعيقلى 📖", callback_data="maher " + str(m.from_user.id))] +
         [InlineKeyboardButton("خالد الجليل 📖", callback_data="galel " + str(m.from_user.id))],
 
-        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{get_bot_information()[1]}?startgroup=new")],
+        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
     ])
     await m.reply_text("◍ اهلا بك فى القرءان الكريم اختر احدى المقرئين\n√", reply_markup=keyboard)
 
@@ -82,7 +82,7 @@ async def quran2(c: Client, m: CallbackQuery):
         [InlineKeyboardButton("ماهر المعيقلى 📖", callback_data="maher " + str(m.from_user.id))] +
         [InlineKeyboardButton("خالد الجليل 📖", callback_data="galel " + str(m.from_user.id))],
 
-        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{get_bot_information()[1]}?startgroup=new")],
+        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
     ])
     await m.message.edit_text("◍ اختر السوره\n√", reply_markup=keyboard, disable_web_page_preview=True)
 
@@ -152,7 +152,7 @@ async def fares(c: Client, m: CallbackQuery):
 
         [InlineKeyboardButton("➡️ التالي", callback_data="fares2 " + str(m.from_user.id))],
         [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="quran2 " + str(m.from_user.id))],
-        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{get_bot_information()[1]}?startgroup=new")],
+        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
 
     ])
     await m.message.edit_text("◍ اختر سوره للقارئ فارس عباد\n√", reply_markup=keyboard, disable_web_page_preview=True)
@@ -232,7 +232,7 @@ async def fares2(c: Client, m: CallbackQuery):
 
         [InlineKeyboardButton("رجوع ⬅️", callback_data="fares " + str(m.from_user.id))],
         [InlineKeyboardButton("القائمه الرئيسيه ⏺", callback_data="quran2 " + str(m.from_user.id))],
-        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{get_bot_information()[1]}?startgroup=new")],
+        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
 
     ])
     await m.message.edit_text("◍ اختر سوره للقارئ فارس عباد\n√", reply_markup=keyboard, disable_web_page_preview=True)
