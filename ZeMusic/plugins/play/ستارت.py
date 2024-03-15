@@ -229,7 +229,7 @@ async def acbcmds(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton("اوامر التشغيل", callback_data="bbasic"),
-                    InlineKeyboardButton("اوامر الادمن", callback_data="admin"),
+                    InlineKeyboardButton("اوامر الادمن", callback_data="aladmin"),
                 ],[
                     InlineKeyboardButton("اوامر المطورين", callback_data="bsudo")
                 ],[
@@ -267,8 +267,8 @@ async def acbbasic(_, query: CallbackQuery):
     )
 
 
-@Client.on_callback_query(filters.regex("admin"))
-async def acbadmin(_, query: CallbackQuery):
+@Client.on_callback_query(filters.regex("aladmin"))
+async def acaladmin(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""
       اوامر التحكم للخاصة بالادمنية: 
