@@ -6,12 +6,12 @@ from ZeMusic import app
 
 
 @app.on_message(filters.command(["قران","قارىء","قران🌿"], ""))
-async def music(c: Client, m: Message):
+async def quran(c: Client, m: Message):
     global mid
-    mid = m.id
+    mid = m.message_id
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
 
-        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="quran " + str(m.from_user.id))],
+        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="quran " + str(m.message_id))],
         
         [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
    
@@ -22,14 +22,14 @@ async def music(c: Client, m: Message):
 
 
 @app.on_callback_query(filters.regex("^quran2 (\\d+)$"))
-async def music2(c: Client, m: CallbackQuery):
-    a = m.data.split(" ")
-    if m.from_user.id != int(a[1]):
+async def quran2(c: Client, m: Message):
+    global mid
+    mid = m.message_id
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
         return
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
 
-        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="quran " + str(m.from_user.id))],
+        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="quran " + str(m.message_id))],
  
         [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
 
