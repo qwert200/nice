@@ -121,7 +121,7 @@ async def cbcmds(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Admin Cmd", callback_data="cbadmin"),
+                    InlineKeyboardButton("Admin Cmd", callback_data="wwwer"),
                     InlineKeyboardButton("Basic Cmd", callback_data="cbsud"),
                 ],[
                     InlineKeyboardButton("Sudo Cmd", callback_data="ophgd")
@@ -133,8 +133,8 @@ async def cbcmds(_, query: CallbackQuery):
     )
 
 
-@Client.on_callback_query(filters.regex("cbadmin"))
-async def cbadmin(_, query: CallbackQuery):
+@Client.on_callback_query(filters.regex("wwwer"))
+async def cbwwwer(_, query: CallbackQuery):
     await query.answer("admin commands")
     await query.edit_message_text(
         f"""
