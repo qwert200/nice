@@ -11,7 +11,7 @@ async def quran(c: Client, m: Message):
     mid = m.id
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
 
-        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="quran" + str(m.from_user.id))],
+        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="qurani " + str(m.from_user.id))],
         
         [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
    
@@ -29,7 +29,7 @@ async def quran2(c: Client, m: Message):
         return
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
 
-        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="quran" + str(m.from_user.id))],
+        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="qurani " + str(m.from_user.id))],
  
         [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
 
@@ -39,7 +39,7 @@ async def quran2(c: Client, m: Message):
     await m.message.edit_text("◍ اهلا بيك بقائمه القراء اختر ما تريد\n√", reply_markup=keyboard)
 
 
-@app.on_callback_query(filters.regex("^quran (\\d+)$"))
+@app.on_callback_query(filters.regex("^qurani (\\d+)$"))
 async def qurani(c: Client, m: Message):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
@@ -63,28 +63,6 @@ async def qurani(c: Client, m: Message):
     await m.reply_text("◍ اهلا بك فى القرءان الكريم اختر احدى المقرئين\n√", reply_markup=keyboard)
 
 
-@app.on_callback_query(filters.regex("^quran2 (\\d+)$"))
-async def quran2(c: Client, m: CallbackQuery):
-    a = m.data.split(" ")
-    if m.from_user.id != int(a[1]):
-        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
-        return
-    keyboard = InlineKeyboardMarkup(inline_keyboard=[
-
-        [InlineKeyboardButton("فارس عباد 📖", callback_data="fares " + str(m.from_user.id))] +
-        [InlineKeyboardButton("ناصر القطامى 📖", callback_data="naser " + str(m.from_user.id))],
-        [InlineKeyboardButton("اسلام صبحى 📖", callback_data="eslam " + str(m.from_user.id))] +
-        [InlineKeyboardButton("عبدالباسط عبد الصمد 📖", callback_data="abdelbaset " + str(m.from_user.id))],
-        [InlineKeyboardButton("ياسر الدوسري 📖", callback_data="eldosary " + str(m.from_user.id))] +
-        [InlineKeyboardButton("ادريس ابكر 📖", callback_data="abkar " + str(m.from_user.id))],
-        [InlineKeyboardButton("مشارى العفاسى 📖", callback_data="afasy " + str(m.from_user.id))] +
-        [InlineKeyboardButton("احمد بن على العجمي 📖", callback_data="agamy " + str(m.from_user.id))],
-        [InlineKeyboardButton("ماهر المعيقلى 📖", callback_data="maher " + str(m.from_user.id))] +
-        [InlineKeyboardButton("خالد الجليل 📖", callback_data="galel " + str(m.from_user.id))],
-
-        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
-    ])
-    await m.message.edit_text("◍ اختر السوره\n√", reply_markup=keyboard, disable_web_page_preview=True)
 
 
 ########################################################################################################################
