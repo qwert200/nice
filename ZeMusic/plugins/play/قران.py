@@ -58,9 +58,10 @@ async def qurani(c: Client, m: Message):
         [InlineKeyboardButton("ماهر المعيقلى 📖", callback_data="maher " + str(m.from_user.id))] +
         [InlineKeyboardButton("خالد الجليل 📖", callback_data="galel " + str(m.from_user.id))],
 
-        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
+        [InlineKeyboardButton("🔱 𝐒𝐎𝐔𝐑𝐂𝐄 • 𝐙𝐄 🔱", url=f"https://t.me/UI_XB")],
+        
     ])
-    await m.reply_text("◍ اهلا بك فى القرءان الكريم اختر احدى المقرئين\n√", reply_markup=keyboard)
+    await m.message.edit_text("◍ اهلا بيك بقائمه القراء اختر ما تريد\n√", reply_markup=keyboard)
 
 
 
