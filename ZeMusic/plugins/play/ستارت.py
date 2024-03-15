@@ -110,7 +110,7 @@ async def cbguides(_, query: CallbackQuery):
 async def cbcmds(_, query: CallbackQuery):
     await query.answer("commands menu")
     await query.edit_message_text(
-        f"""<b>✨Hello</b> {0} !
+        f"""✨Hello  [{query.message.chat.first_name}] !
 » press the button below to read the explanation and see the list of available commands !
 ⚡ Powered by ᎪᎻᎷᎬᎠ """,
         reply_markup=InlineKeyboardMarkup(
@@ -222,7 +222,7 @@ async def acbguides(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("bcmds"))
 async def acbcmds(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""***✨Hello [{message.from_user.first_name}](https://t.me/{message.from_user.username})*** !
+        f"""***✨Hello  [{query.message.chat.first_name}](https://t.me/{message.from_user.username})*** !
 » اتبع الازرار بالاسفل لمعرفة طريقة التشغيل ⚡
 ⚡  Developer by 𝗔𝗛𝗠𝗘𝗗 """,
         reply_markup=InlineKeyboardMarkup(
