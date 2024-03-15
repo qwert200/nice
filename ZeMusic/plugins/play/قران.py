@@ -11,7 +11,7 @@ async def quran(c: Client, m: Message):
     mid = m.id
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
 
-        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="quran " + str(m.from_user.id))],
+        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="quran" + str(m.from_user.id))],
         
         [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
    
@@ -29,7 +29,7 @@ async def quran2(c: Client, m: Message):
         return
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
 
-        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="quran " + str(m.from_user.id))],
+        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="quran" + str(m.from_user.id))],
  
         [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
 
@@ -40,7 +40,7 @@ async def quran2(c: Client, m: Message):
 
 
 @app.on_callback_query(filters.regex("^quran (\\d+)$"))
-async def quran(c: Client, m: Message):
+async def qurani(c: Client, m: Message):
     a = m.data.split(" ")
     if m.from_user.id != int(a[1]):
         await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
