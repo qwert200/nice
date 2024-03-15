@@ -1,19 +1,43 @@
+import asyncio
+
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery
-from config import get_bot_information
-###############################################
-##  CopyRight & Creator File And Programing  ##
-##                                           ##
-##     #######  ######  #####*     *##*      ##
-##     #  #  #  ###     #     *   *    *     ##
-##     #     #  ##      #     *   *    *     ##
-##     #     #  #####   #####*     *##*      ##
-##                                           ##
-###############################################
+from ZeMusic import app
 
-################################
-## Dev By: @WWWL5 & @MRv7x  ##
-################################
+
+@app.on_message(filters.command(["قران","قارىء","قران🌿"], ""))
+async def music(c: Client, m: Message):
+    global mid
+    mid = m.id
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+
+        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="quran " + str(m.from_user.id))],
+        
+        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
+   
+        [InlineKeyboardButton("🔱 𝐒𝐎𝐔𝐑𝐂𝐄 • 𝐙𝐄 🔱", url=f"https://t.me/UI_XB")],
+        
+    ])
+    await m.reply_text("◍ اهلا بيك بقائمه القراء اختر ما تريد\n√", reply_markup=keyboard)
+
+
+@app.on_callback_query(filters.regex("^quran2 (\\d+)$"))
+async def music2(c: Client, m: CallbackQuery):
+    a = m.data.split(" ")
+    if m.from_user.id != int(a[1]):
+        await c.answer_callback_query(m.id, text="صاحب الامر هو فقط من يستطيع الضغط على الزر 🖤🙂", show_alert=True)
+        return
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+
+        [InlineKeyboardButton("قائمة القراء 🌿", callback_data="quran " + str(m.from_user.id))],
+ 
+        [InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{app.username}?startgroup=new")],
+
+        [InlineKeyboardButton("🔱 𝐒𝐎𝐔𝐑𝐂𝐄 • 𝐙𝐄 🔱", url=f"https://t.me/UI_XB")],
+        
+    ])
+    await m.message.edit_text("◍ اهلا بيك بقائمه القراء اختر ما تريد\n√", reply_markup=keyboard)
+
 
 @Client.on_callback_query(filters.regex("^quran (\\d+)$"))
 async def quran(c: Client, m: Message):
