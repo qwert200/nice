@@ -8,37 +8,34 @@ from ZeMusic import app
 async def arbic(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
-        f""" **[مرحبا بك] [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) ! \n
-※ انا بوت تشغيل الأغاني والفيديو  في المكالمه المرئية
-※ لاظهار كيبورد الاعضاء اضغط /hamody \n
-※ في حال مواجهه اي مشكله انضم هنا
-※ استخدم الازرار لمعرفه الاوامر المستخدمه. """,
+        f""" انا بوت تشغيل موسيقى صوتية ومرئية .⚡\n
+قم بإضافة البوت إلي مجموعتك او قناتك .⚡\n
+سيتم تفعيل البوت وانضمام المساعد تلقائياً
+في حال مواجهت مشاكل تواصل مع المطور 
+استخدم الازرار لمعرفه اوامر الاستخدام .⚡ """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "اضف البوت اللي مجموعتك ",
+                        "اضف البوت الى مجموعتك ⚡♥",
                         url=f"https://t.me/{app.username}?startgroup=true",
                     )
                 ],
-                [InlineKeyboardButton("𓏺 ََِ𝗦𝗢𝗨𝗥𝗖𝗘 𝗛𝗔𝗠𝗢𝗗𝗬‌↺", url=f"https://t.me/source_hamody"),
-                
-InlineKeyboardButton("لتفعيل كيبورد الاعضاء", callback_data="afyona"),
+                [InlineKeyboardButton(" الدعم والتواصل ", url=f"https://t.me/ah07v"),
                 ],
                 [                   InlineKeyboardButton(" طريقه التشغيل ", callback_data="bcmds"),
                     InlineKeyboardButton(" طريقه التفعيل ", callback_data="bhowtouse"),
                 ],
                 [
                     InlineKeyboardButton(
-                        " السورس ", url=f"https://t.me/source_hamody"
+                        " الدعم ", url=config.SUPPORT_CHAT
                     ),
                     InlineKeyboardButton(
-                        " اضف البوت لمجموعتك ", url=f"https://t.me/MUSIC_HAMODY_BOT?startgroup=true"
-                    ),
+                        " القناة ", url=config.SUPPORT_CHANNEL),
                 ],
                 [
                     InlineKeyboardButton(
-                        " الدعم ", url="https://t.me/q_r_II"
+                        " الـمطور ", user_id=config.OWNER_ID 
                     )
                 ],
             ]
@@ -55,29 +52,27 @@ async def english(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "Add me to your Group ",
+                        "𝐴𝑑𝑑 𝑚𝑒 𝑡𝑜 𝑦𝑜𝑢𝑟 𝐺𝑟𝑜𝑢𝑝",
                         url=f"https://t.me/{app.username}?startgroup=true",
                     )
                 ],
-                [InlineKeyboardButton(" Basic Guide", callback_data="cbhowtouse"),
-                
-InlineKeyboardButton(" member keyboard ", callback_data="MH_BP"),
+                [InlineKeyboardButton("𝑠𝑢𝑝𝑝𝑜𝑟𝑡 ", url=f"https://t.me/ah07v"),
                 ],
                 [                
-                    InlineKeyboardButton(" Commands", callback_data="cbcmds"),
-                    InlineKeyboardButton(" Donate ", url=f"https://t.me/source_hamody"),
+                    InlineKeyboardButton(" 𝐶𝑜𝑚𝑚𝑎𝑛𝑑𝑠", callback_data="cbcmds"),
+                    InlineKeyboardButton(" 𝐵𝑎𝑠𝑖𝑐 𝐺𝑢𝑖𝑑𝑒 ", callback_data="cbhowtouse"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "𓏺 ََِ𝗦𝗢𝗨𝗥𝗖𝗘 𝗛𝗔𝗠𝗢𝗗𝗬‌↺", url=f"https://t.me/source_hamody"
+                        " 𝐺𝑟𝑜𝑢𝑝 ", url=config.SUPPORT_CHAT
                     ),
                     InlineKeyboardButton(
-                        " المطور ", url=f"https://t.me/MH_BP"
+                        " 𝐶ℎ𝑎𝑛𝑛𝑒𝑙 ", url=config.SUPPORT_CHANNEL
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        " الدعم ", url="https://t.me/q_r_II"
+                        " 𝐷𝑒𝑣𝑒𝑙𝑜𝑝𝑒𝑟 ", user_id=config.OWNER_ID 
                     )
                 ],
             ]
@@ -104,17 +99,7 @@ async def cbguides(_, query: CallbackQuery):
         ),
     )
 
-@Client.on_callback_query(filters.regex("MH_BP"))
-async def cbguides(_, query: CallbackQuery):
-    await query.answer("user guide")
-    await query.edit_message_text(
-        f"""**※Welcome \n
-※Show members keyboard Send /hamody**
-""",
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="english")]]
-        ),
-    )
+
     
     
 @Client.on_callback_query(filters.regex("cbcmds"))
