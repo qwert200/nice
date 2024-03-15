@@ -49,7 +49,13 @@ async def arbic(_, query: CallbackQuery):
 async def english(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
-        f"",
+        f"
+      A Telegram Music Bot
+Played Music and Video in VC
+Bot Online Now ......🖱️❤️
+Add Me To Your Chat
+Powered By [ᎪᎻᎷᎬᎠ]  
+        ",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
