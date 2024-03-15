@@ -110,7 +110,7 @@ async def cbguides(_, query: CallbackQuery):
 async def cbcmds(_, query: CallbackQuery):
     await query.answer("commands menu")
     await query.edit_message_text(
-        f"""***✨Hello [{message.from_user.first_name}](https://t.me/{message.from_user.username})*** !
+        f"""<b>✨Hello</b> {0}، !
 » press the button below to read the explanation and see the list of available commands !
 ⚡ Powered by ᎪᎻᎷᎬᎠ """,
         reply_markup=InlineKeyboardMarkup(
