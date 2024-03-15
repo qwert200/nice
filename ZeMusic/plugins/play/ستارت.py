@@ -10,8 +10,8 @@ import config
 async def arbic(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
-        f""" انا بوت تشغيل موسيقى صوتية ومرئية .⚡\n
-قم بإضافة البوت إلي مجموعتك او قناتك .⚡\n
+        f""" انا بوت تشغيل موسيقى صوتية ومرئية .⚡
+قم بإضافة البوت إلي مجموعتك او قناتك .⚡
 سيتم تفعيل البوت وانضمام المساعد تلقائياً
 في حال مواجهت مشاكل تواصل مع المطور 
 استخدم الازرار لمعرفه اوامر الاستخدام .⚡ """,
@@ -110,7 +110,7 @@ async def cbguides(_, query: CallbackQuery):
 async def cbcmds(_, query: CallbackQuery):
     await query.answer("commands menu")
     await query.edit_message_text(
-        f"""✨**Hello [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
+        f"""✨Hello [{message.from_user.first_name}](https://t.me/{message.from_user.username}) !
 » press the button below to read the explanation and see the list of available commands !
 ⚡ Powered by ᎪᎻᎷᎬᎠ """,
         reply_markup=InlineKeyboardMarkup(
@@ -129,16 +129,16 @@ async def cbcmds(_, query: CallbackQuery):
 
 
 @Client.on_callback_query(filters.regex("cbadmin"))
-async def cbbasic(_, query: CallbackQuery):
+async def cbadmin(_, query: CallbackQuery):
     await query.answer("admin commands")
     await query.edit_message_text(
         f"""
-🏮 here is the admin commands:\n
-» /pause - pause the stream\n
-» /resume - resume the stream \n
-» /skip - switch to next stream \n
-» /stop - stop the streaming \n
-» /loop - loop the streaming \n
+🏮 here is the admin commands:
+» /pause - pause the stream
+» /resume - resume the stream 
+» /skip - switch to next stream 
+» /stop - stop the streaming 
+» /loop - loop the streaming 
 ⚡️  Developer by ᎪᎻᎷᎬᎠ 
 """,
         reply_markup=InlineKeyboardMarkup(
@@ -148,7 +148,7 @@ async def cbbasic(_, query: CallbackQuery):
 
 
 @Client.on_callback_query(filters.regex("cbsud"))
-async def cbadmin(_, query: CallbackQuery):
+async def cbsud(_, query: CallbackQuery):
     await query.answer("basic commands")
     await query.edit_message_text(
         f""" 
@@ -222,15 +222,20 @@ async def acbguides(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("bcmds"))
 async def acbcmds(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""**Hello [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**\n
-» اتبع الازرار بالاسفل لمعرفة طريقة التشغيل ⚡\n ⚡  Developer by 𝗔𝗛𝗠𝗘𝗗 """,
+        f"""✨Hello [{message.from_user.first_name}](https://t.me/{message.from_user.username}) !
+» اتبع الازرار بالاسفل لمعرفة طريقة التشغيل ⚡
+⚡  Developer by 𝗔𝗛𝗠𝗘𝗗 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton("اوامر التشغيل", callback_data="bbasic"),
-                    InlineKeyboardButton("اوامر الادمن", callback_data="badmin"),
+                    InlineKeyboardButton("اوامر الادمن", callback_data="admin"),
                 ],[
                     InlineKeyboardButton("اوامر المطورين", callback_data="bsudo")
+                ],[
+                    InlineKeyboardButton("اوامر الحمايه", callback_data="hmaeh")
+                ],[
+                    InlineKeyboardButton("اوامر اضافيه", callback_data="atafeh")
                 ],[
                     InlineKeyboardButton(" عوده ", callback_data="arbic")
                 ],
@@ -243,17 +248,17 @@ async def acbcmds(_, query: CallbackQuery):
 async def acbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""
-      اوامر التشغيل ⚡:\n
-» شغل او تشغيل - لتشغيل الموسيقى \n  
-» فيد او فيديو  - لتشغيل مقطع فيديو \n 
-» تشغيل عشوائي  - لتشغيل اغنيه عشوائية \n
-» بحث - للبحث عن نتائج في اليوتيوب \n
-» حمل + اسم الفيديو - لتحميل مقطع فيديو \n
-» نزل + اسم الاغنيه - لتحميل ملف صوتي \n
-» اغاني - جلب قائمة الاغاني والفنانين \n
-» تفعيل الاذان - تفعيل تنبيهات الصلاة في المحادثه \n
-» بنج - عرض سرعة الاستجابة \n
-» سورس - لعرض معلومات البوت \n
+      اوامر التشغيل ⚡:
+» شغل او تشغيل - لتشغيل الموسيقى  
+» فيد او فيديو  - لتشغيل مقطع فيديو 
+» تشغيل عشوائي  - لتشغيل اغنيه عشوائية 
+» بحث - للبحث عن نتائج في اليوتيوب 
+» حمل + اسم الفيديو - لتحميل مقطع فيديو 
+» نزل + اسم الاغنيه - لتحميل ملف صوتي 
+» اغاني - جلب قائمة الاغاني والفنانين 
+» تفعيل الاذان - تفعيل تنبيهات الصلاة في المحادثه 
+» بنج - عرض سرعة الاستجابة 
+» سورس - لعرض معلومات البوت 
 ⚡️  Developer by ᎪᎻᎷᎬᎠ  
         """,
         reply_markup=InlineKeyboardMarkup(
@@ -262,17 +267,17 @@ async def acbbasic(_, query: CallbackQuery):
     )
 
 
-@Client.on_callback_query(filters.regex("badmin"))
+@Client.on_callback_query(filters.regex("admin"))
 async def acbadmin(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""
-      اوامر التحكم للخاصة بالادمنية: \n
-» ايقاف مؤقت - ايقاف التشغيل موقتأ \n
-» استكمال - لاستكمال التشغيل \n
-» تخطي - لتخطي تشغيل الحالي \n
-» ايقاف او اسكت - لايقاف تشغيل الحالي \n
-» تكرار او كررها - لتكرار التشغيل الحالي \n
-» تمرير او مرر - لتتغير وقت التشغيل الحالي\n
+      اوامر التحكم للخاصة بالادمنية: 
+» ايقاف مؤقت - ايقاف التشغيل موقتأ 
+» استكمال - لاستكمال التشغيل 
+» تخطي - لتخطي تشغيل الحالي 
+» ايقاف او اسكت - لايقاف تشغيل الحالي 
+» تكرار او كررها - لتكرار التشغيل الحالي 
+» تمرير او مرر - لتتغير وقت التشغيل الحالي 
 ⚡️  Developer by ᎪᎻᎷᎬᎠ  
         """,
         reply_markup=InlineKeyboardMarkup(
@@ -285,20 +290,20 @@ async def acbadmin(_, query: CallbackQuery):
 async def acbsudo(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""
-       ✏ اوامر المطورين.\n
-» • تعين اسم البوت • \n
-» • الاحصائيات •\n
-» • المجموعات • \n
-» • المستخدمين • \n
-» • قسم الاذاعه •\n
-» • قسم التحكم في الحساب المساعد •\n
-» • تفعيل سجل التشغيل • \n
-» • تعطيل سجل التشغيل •\n
-» • تغير مكان سجل التشغيل •\n
-» • تفعيل الاشتراك الإجباري • \n
-» • تعطيل الاشتراك الإجباري • \n
-» • المكالمات النشطه • \n
-» • تشغيل مخصص • \n
+       ✏ اوامر المطورين.
+» • تعين اسم البوت • 
+» • الاحصائيات •
+» • المجموعات • 
+» • المستخدمين • 
+» • قسم الاذاعه •
+» • قسم التحكم في الحساب المساعد •
+» • تفعيل سجل التشغيل • 
+» • تعطيل سجل التشغيل •
+» • تغير مكان سجل التشغيل •
+» • تفعيل الاشتراك الإجباري • 
+» • تعطيل الاشتراك الإجباري •
+» • المكالمات النشطه • 
+» • تشغيل مخصص • 
 » • اذاعه صوتيه • 
 
 ⚡  Developer by ᎪᎻᎷᎬᎠ 
@@ -307,3 +312,65 @@ async def acbsudo(_, query: CallbackQuery):
             [[InlineKeyboardButton(" عوده ", callback_data="bcmds")]]
         ),
     )
+
+@Client.on_callback_query(filters.regex("hmaeh"))
+async def achmaeh(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""
+ اوامر الحمايه ⚡:
+
+» كتم - الغاء كتم - مسح المكتومين
+» تقيد - الغاء تقيد - مسح المقيدين
+» حظر - الغاء حظر - مسح المحظورين
+» مسح + الرد - مسح + عدد الرسائل 
+
+» المشرفين - جلب قايمة المشرفين
+» البوتات - جلب قايمة البوتات 
+» طرد البوتات - حذف البوتات  
+
+» تعين اسم + الاسم 
+» تعين صوره - بالرد علي الصورة
+» تعطيل الترحيب - تفعيل الترحيب
+» تعطيل الاشتراك - تفعيل الاشتراك
+
+» منع الروابط - فتح الروابط  
+» منع تعديل الميديا - فتح تعديل الميديا 
+» منع الاسائه - فتح الاسائه 
+» منع الاباحي - فتح الاباحي  
+» منع التوجيه - فتح التوجيه 
+
+» رفع مشرف - تنزيل مشرف
+» منع التصفيه مفعله تلقائيا 
+
+» السماح بالتحدث ( في القنوات )
+» تعطيل السماح بالتحدث ( في القنوات )
+
+⚡️  Developer by ᎪᎻᎷᎬᎠ
+        """,
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton(" عوده ", callback_data="bcmds")]]
+        ),
+    )
+
+
+@Client.on_callback_query(filters.regex("atafeh"))
+async def acatafeh(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""
+      الاوامر الإضافية ⚡:
+» تويت - كت 
+» صراحه - اسئله
+» نكت - نكته 
+» فزوره - لغز 
+» تحدي - عقاب
+» صوره - رمزيه 
+» رتبتي - الرتبه ف المجموعة
+» ايدي - معلومات المستخدم مع ازرار اضافيه
+⚡️  Developer by ᎪᎻᎷᎬᎠ
+        """,
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton(" عوده ", callback_data="bcmds")]]
+        ),
+    )
+    
+
