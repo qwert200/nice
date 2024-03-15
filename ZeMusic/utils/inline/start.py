@@ -19,10 +19,8 @@ def start_panel(_):
 def private_panel(_):
     buttons = [
         [
-            InlineKeyboardButton(text=" English 🇺🇸 ", callback_data="english")), 
-            InlineKeyboardButton(text=" عربي 🇮🇶 ", callback_data="arbic")),
-            
-        ],
+            InlineKeyboardButton(text=" English 🇺🇸 ", callback_data="english"), 
+            InlineKeyboardButton(text=" عربي 🇮🇶 ", callback_data="arbic")],
         [
             InlineKeyboardButton(text=" الـمطور ", user_id=config.OWNER_ID),
         ],
