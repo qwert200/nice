@@ -124,7 +124,7 @@ async def cbcmds(_, query: CallbackQuery):
                     InlineKeyboardButton("Admin Cmd", callback_data="cbadmin"),
                     InlineKeyboardButton("Basic Cmd", callback_data="cbsud"),
                 ],[
-                    InlineKeyboardButton("Sudo Cmd", callback_data="cbsudo")
+                    InlineKeyboardButton("Sudo Cmd", callback_data="ophgd")
                 ],[
                     InlineKeyboardButton("Go Back ", callback_data="english")
                 ],
@@ -173,8 +173,8 @@ async def cbsud(_, query: CallbackQuery):
         ),
     )
 
-@Client.on_callback_query(filters.regex("cbsudo"))
-async def cbsudo(_, query: CallbackQuery):
+@Client.on_callback_query(filters.regex("ophgd"))
+async def cbophgd(_, query: CallbackQuery):
     await query.answer("sudo commands")
     await query.edit_message_text(
         f""" 
