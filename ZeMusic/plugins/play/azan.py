@@ -7,10 +7,10 @@ import random
 from datetime import datetime
 import requests
 import pytz
-from ZeMusic.core.call import Mody
+from ZeMusic.core.call import Anon
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
-from ZeMusic.core.call import Mody
+from ZeMusic.core.call import Anon
 from ZeMusic.utils.database import *
 from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJoinedError)
 from pyrogram.errors import (
@@ -27,25 +27,25 @@ chat = []
 async def azaan(c, msg):
   if msg.text == "تفعيل الاذان":
     if msg.chat.id in chat:
-      return await msg.reply_text("- الاذان متفعل هنا من قبل 🥰♥️")
+      return await msg.reply_text("- الاذان متفعل اصلا يسطا")
     else:
       chat.append(msg.chat.id)
-      return await msg.reply_text("تم تفعيل الاذان ♥️🌿")
+      return await msg.reply_text("تم تفعيل الاذان")
   elif msg.text == "تعطيل الاذان":
     if msg.chat.id in chat:
       chat.remove(msg.chat.id)
-      return await msg.reply_text("تم تعطيل الاذان ♥️🌿")
+      return await msg.reply_text("تم تعطيل الاذان")
     else:
-      return await msg.reply_text("- الاذان متعطل هنا من قبل 🥰♥️")
+      return await msg.reply_text("- الاذان متعطله اصلا يسطا")
       
 async def kill():
   for i in chat:
-    await Mody.force_stop_stream(i)
+    await Anon.force_stop_stream(i)
 
 
 async def play(i):
-  assistant = await group_assistant(Mody,i)
-  file_path = "./ZeMusic/assets/azan.m4a"
+  assistant = await group_assistant(Anon,i)
+  file_path = "./AnonXMusic/assets/azan.m4a"
   stream = AudioPiped(file_path, audio_parameters=HighQualityAudio())
   try:
       await assistant.join_group_call(
@@ -55,7 +55,7 @@ async def play(i):
       )
   except NoActiveGroupCall:
     try:
-        await Mody.join_assistant(i,i)
+        await Anon.join_assistant(i,i)
     except Exception as e:
        await app.send_message(i,f"{e}")
   except TelegramServerError:
@@ -96,8 +96,6 @@ def prayer_time():
    except Exception as e:
        asyncio.sleep(5)
        print(e)  
-#لالالالا
-# جتة مواعيد الصلاة الي تحت دي سارقها من هلال علشان م بعرف استخدم مكتبة ال time ف انضموا لقناته @SOURCEFR3ON
 
 async def azkar():
   while not await asyncio.sleep(2):
@@ -105,9 +103,7 @@ async def azkar():
      prayer = prayer_time()
      await kill()
      for i in chat:
-       await app.send_message(i, f"حان الان وقت اذان {prayer} بتوقيت القاهرة 🥰♥️")
+       await app.send_message(i, f"حان الان وقت اذان {prayer}")
        await play(i)
      await asyncio.sleep(174)
      await kill()
-#مواعيد الصلاه بس الي سارقها بقيت الكود كتابتي هي اكيد كتابه معاقه بس عادي م مهم رايك انا مبسوط بيها يوزري للاعمال الخاصه @z0hary
-     
