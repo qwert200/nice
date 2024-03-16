@@ -14,6 +14,9 @@ from pyrogram.types import InlineKeyboardButton
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove, Message, ChatJoinRequest
 import config
 from ZeMusic import app
+from ZeMusic.utils.inline import help_pannel, private_panel, start_panel
+from strings import get_string
+
 
 
 
@@ -53,11 +56,9 @@ REPLY_MESSAGE_BUTTONS = [
 
 
 
-
-  
-
-@app.on_message(filters.command(["/start","رجوع للقائمة الرئيسيه"], ""))
-async def cpanel(_, message: Message):             
+@app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
+@LanguageStart
+async def start_pm(client, message: Message, _):             
         text = REPLY_MESSAGE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, resize_keyboard=True, selective=True)
         await message.reply(
