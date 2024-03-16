@@ -59,7 +59,10 @@ REPLY_MESSAGE_BUTTONS = [
 
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
-async def start_pm(client, message: Message, _):             
+async def start_pm(client, message: Message, _): 
+  await add_served_user(message.from_user.id)
+    if len(message.text.split()) > 1:
+        name = message.text.split(None, 1)[1]
         text = REPLY_MESSAGE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, resize_keyboard=True, selective=True)
         await message.reply(
