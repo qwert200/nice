@@ -1,4 +1,4 @@
-from config import API_ID, API_HASH, MONGO_DB_URL, user, dev, call, logger, logger_mode, botname, GROUP as GROUPOWNER, CHANNEL as CHANNELOWNER, OWNER, OWNER_NAME
+from config import 
 from pymongo import MongoClient
 from pyrogram import Client, filters
 from pytgcalls import PyTgCalls
