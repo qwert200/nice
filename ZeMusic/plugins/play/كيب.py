@@ -12,6 +12,7 @@ from ZeMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from typing import Union
 from pyrogram.types import InlineKeyboardButton
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove, Message, ChatJoinRequest
+from ZeMusic.utils.decorators.language import LanguageStart
 import config
 from ZeMusic import app
 from ZeMusic.utils.inline import help_pannel, private_panel, start_panel
