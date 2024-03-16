@@ -57,7 +57,7 @@ REPLY_MESSAGE_BUTTONS = [
 
 
 
-@app.on_message(filters.command(["start","/AM"]) & filters.private & ~BANNED_USERS)
+@app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
 async def start_pm(client, message: Message, _): 
         text = REPLY_MESSAGE
