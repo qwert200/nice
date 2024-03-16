@@ -5,17 +5,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from ZeMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from config import OWNER_ID
 from ZeMusic.misc import SUDOERS as sudo
-from ZeMusic.utils.database import (add_served_chat,
-                                       is_served_chat,
-                                       get_served_chats,
-                                       add_served_user,
-                                       get_served_users,
-                                       blacklisted_chats,
-                                       get_assistant, get_lang,
-                                       get_userss, is_on_off,
-                                       is_served_private_chat,
-                                       is_active_chat)
-
+from ZeMusic.utils.database import *
 
 @app.on_message(filters.command(["الغاء حظر"], "") & filters.group)
 async def unbaneed(client, message):
