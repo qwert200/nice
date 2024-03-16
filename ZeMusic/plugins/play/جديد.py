@@ -284,26 +284,3 @@ caption=f"""**لمراسلة احمد النقيب اضغت علي الزر با
     )
 
 
-@app.on_message(filters.voice_chat_started)
-async def zohary(client: Client, message: Message): 
-      await message.reply_text("**تم بدأ محادثع صوتيه .**")
-
-@app.on_message(filters.voice_chat_ended)
-async def zoharyy(client: Client, message: Message):
-      await message.reply_text("**تم انهاء محادثه صوتيه .**")
-
-
-@app.on_message(filters.voice_chat_members_invited)
-async def fuckoff(client: Client, message: Message):
-           text = f"• قام {message.from_user.mention}\n • بدعوة : "
-           x = 0
-           for user in message.voice_chat_members_invited.users:
-               try:
-                text += f"{user.mention} "
-                x += 1
-               except Exception:
-                pass
-           try:
-             await message.reply_text(f"{text} .")
-           except:
-             pass
