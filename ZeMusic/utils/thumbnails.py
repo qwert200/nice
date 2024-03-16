@@ -71,6 +71,8 @@ async def get_thumb(videoid):
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.5)
         draw = ImageDraw.Draw(background)
+        font = ImageFont.truetype("ZeMusic/assets/font2.ttf", 40)
+        font2 = ImageFont.truetype("ZeMusic/assets/font2.ttf", 70)
         arial = ImageFont.truetype("ZeMusic/assets/font2.ttf", 30)
         font = ImageFont.truetype("ZeMusic/assets/font.ttf", 30)
         draw.text((1110, 8), unidecode(app.name), fill="white", font=arial)
