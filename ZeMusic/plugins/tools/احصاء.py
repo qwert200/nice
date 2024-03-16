@@ -40,7 +40,7 @@ async def base(text):
 
 
 
-@Client.on_message(filters.command(["الاحصائيات", "• الاحصائيات •"], ""))
+@app.on_message(filters.command(["الاحصائيات", "• الاحصائيات •"], ""))
 async def analysis(client: Client, message: Message):
  bot_username = client.me.username
  dev = await get_dev(bot_username)
@@ -49,7 +49,7 @@ async def analysis(client: Client, message: Message):
    user = len(await get_served_users(client))
    return await message.reply_text(f"**✅ احصائيات البوت**\n**⚡ المجموعات {chats} مجموعة  **\n**⚡ المستخدمين {user} مستخدم**")
 
-@Client.on_message(filters.command(["• المجموعات •"], ""))
+@app.on_message(filters.command(["• المجموعات •"], ""))
 async def chats_func(client: Client, message: Message):
  bot_username = client.me.username
  dev = await get_dev(bot_username)
@@ -90,7 +90,7 @@ async def chats_func(client: Client, message: Message):
 
 
 
-@Client.on_message(filters.command(["• المستخدمين •"], ""))
+@app.on_message(filters.command(["• المستخدمين •"], ""))
 async def users_func(client: Client, message: Message):
  bot_username = client.me.username
  dev = await get_dev(bot_username)
@@ -129,7 +129,7 @@ async def users_func(client: Client, message: Message):
          await message.reply_text(link)
       return await m.delete()
 
-@Client.on_message(filters.command("• المكالمات النشطه •", ""))
+@app.on_message(filters.command("• المكالمات النشطه •", ""))
 async def geetmeactive(client, message):
   bot_username = client.me.username
   dev = await get_dev(bot_username)
@@ -158,7 +158,7 @@ async def geetmeactive(client, message):
 
 
 
-@Client.on_message(filters.command(["• قسم الإذاعة •", "• رجوع •"], ""))
+@app.on_message(filters.command(["• قسم الإذاعة •", "• رجوع •"], ""))
 async def cast(client: Client, message):
    bot_username = client.me.username
    dev = await get_dev(bot_username)
@@ -167,7 +167,7 @@ async def cast(client: Client, message):
     await message.reply_text("**أهلا بك عزيزي المطور **\n**هنا قسم الاذاعه تحكم بالازار**", reply_markup=kep)
 
 
-@Client.on_message(filters.command(["• اذاعه عام •", "• اذاعه للمجموعات •", "• اذاعه للمستخدمين •", "• توجيه عام •", "• توجيه للمستخدمين •", "• توجيه للمجموعات •"], ""))
+@app.on_message(filters.command(["• اذاعه عام •", "• اذاعه للمجموعات •", "• اذاعه للمستخدمين •", "• توجيه عام •", "• توجيه للمستخدمين •", "• توجيه للمجموعات •"], ""))
 async def cast1(client: Client, message):
    command = message.command[0]
    bot_username = client.me.username
@@ -193,7 +193,7 @@ async def cast1(client: Client, message):
      await message.reply_text("**أهلا بك عزيزي المطور **\n**هنا قسم الاذاعه تحكم بالازار**", reply_markup=kep)
 
 
-@Client.on_message(filters.command(["• اذاعه عام بالبوت •", "• اذاعه عام بالمساعد •", "• اذاعه للمجموعات بالبوت •", "• اذاعه للمجموعات بالمساعد •", "• اذاعه للمستخدمين بالبوت •", "• اذاعه للمستخدمين بالمساعد •", "• توجيه عام بالبوت •", "• توجيه عام بالمساعد •", "• توجيه للمجموعات بالبوت •", "• توجيه للمجموعات بالمساعد •", "• توجيه للمستخدمين بالبوت •", "• توجيه للمستخدمين بالمساعد •"], ""))
+@app.on_message(filters.command(["• اذاعه عام بالبوت •", "• اذاعه عام بالمساعد •", "• اذاعه للمجموعات بالبوت •", "• اذاعه للمجموعات بالمساعد •", "• اذاعه للمستخدمين بالبوت •", "• اذاعه للمستخدمين بالمساعد •", "• توجيه عام بالبوت •", "• توجيه عام بالمساعد •", "• توجيه للمجموعات بالبوت •", "• توجيه للمجموعات بالمساعد •", "• توجيه للمستخدمين بالبوت •", "• توجيه للمستخدمين بالمساعد •"], ""))
 async def cast5(client: Client, message):
   command = message.command[0]
   bot_username = client.me.username
@@ -487,7 +487,7 @@ async def cast5(client: Client, message):
 # قسم التحكم ف المساعد
 
 
-@Client.on_message(filters.command("• قسم التحكم في المساعد •", ""))
+@app.on_message(filters.command("• قسم التحكم في المساعد •", ""))
 async def helpercn(client, message):
    bot_username = client.me.username
    dev = await get_dev(bot_username)
@@ -502,7 +502,7 @@ async def helpercn(client, message):
    
 
 
-@Client.on_message(filters.command("• فحص المساعد •", ""))
+@app.on_message(filters.command("• فحص المساعد •", ""))
 async def userrrrr(client: Client, message):
    bot_username = client.me.username
    dev = await get_dev(bot_username)
@@ -551,7 +551,7 @@ async def userrrrr(client: Client, message):
         )
     )
 
-@Client.on_message(filters.command("• تغير الاسم الاول •", ""))
+@app.on_message(filters.command("• تغير الاسم الاول •", ""))
 async def changefisrt(client: Client, message):
   bot_username = client.me.username
   dev = await get_dev(bot_username)
@@ -566,7 +566,7 @@ async def changefisrt(client: Client, message):
      await message.reply_text(f" حدث خطأ أثناء تغير الاسم \n {es}")
 
 
-@Client.on_message(filters.command("• تغير الاسم التاني •", ""))
+@app.on_message(filters.command("• تغير الاسم التاني •", ""))
 async def changelast(client: Client, message):
   bot_username = client.me.username
   dev = await get_dev(bot_username)
@@ -581,7 +581,7 @@ async def changelast(client: Client, message):
      await message.reply_text(f" حدث خطأ أثناء تغير الاسم \n {es}")
 
 
-@Client.on_message(filters.command("• تغير البايو •", ""))
+@app.on_message(filters.command("• تغير البايو •", ""))
 async def changebio(client: Client, message):
   bot_username = client.me.username
   dev = await get_dev(bot_username)
@@ -596,7 +596,7 @@ async def changebio(client: Client, message):
      await message.reply_text(f" حدث خطأ أثناء تغير البايو \n {es}")
 
 
-@Client.on_message(filters.command("• تغير اسم المستخدم •", ""))
+@app.on_message(filters.command("• تغير اسم المستخدم •", ""))
 async def changeusername(client: Client, message):
   bot_username = client.me.username
   dev = await get_dev(bot_username)
@@ -611,7 +611,7 @@ async def changeusername(client: Client, message):
      await message.reply_text(f" حدث خطأ أثناء تغير اسم المستخدم \n {es}")
 
 
-@Client.on_message(filters.command(["• اضافه صوره •"], ""))
+@app.on_message(filters.command(["• اضافه صوره •"], ""))
 async def changephoto(client: Client, message):
   bot_username = client.me.username
   dev = await get_dev(bot_username)
@@ -625,7 +625,7 @@ async def changephoto(client: Client, message):
    except Exception as es:
      await message.reply_text(f" حدث خطأ أثناء تغير الصوره \n {es}")
 
-@Client.on_message(filters.command(["• ازاله صوره •"], ""))
+@app.on_message(filters.command(["• ازاله صوره •"], ""))
 async def changephotos(client: Client, message):
   bot_username = client.me.username
   dev = await get_dev(bot_username)
@@ -639,7 +639,7 @@ async def changephotos(client: Client, message):
          await message.reply_text(f" حدث خطأ أثناء ازاله الصوره \n {es}")
 
 
-@Client.on_message(filters.command("• دعوه المساعد الي الانضمام •", ""))
+@app.on_message(filters.command("• دعوه المساعد الي الانضمام •", ""))
 async def joined(client: Client, message):
   bot_username = client.me.username
   dev = await get_dev(bot_username)
@@ -658,7 +658,7 @@ async def joined(client: Client, message):
 
 
 
-@Client.on_message(filters.command(["• تغير مكان سجل التشغيل •", "• تفعيل سجل التشغيل •", "• تعطيل سجل التشغيل •"], ""))
+@app.on_message(filters.command(["• تغير مكان سجل التشغيل •", "• تفعيل سجل التشغيل •", "• تعطيل سجل التشغيل •"], ""))
 async def set_history(client: Client, message):
  bot_username = client.me.username
  dev = await get_dev(bot_username)
