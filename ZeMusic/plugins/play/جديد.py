@@ -233,7 +233,7 @@ async def stop(client, message):
     return
 @app.on_message(
      command(["ميمو"])
-    & ~filters.edited
+    & ~filters.private
 )
 async def memo(client: Client, message: Message):
     await message.reply_photo(
@@ -259,7 +259,7 @@ caption=f"""**لمراسلة ميمو اضغت علي الزر بالاسفل .*
 
 @app.on_message(
      command(["النقيب", "نقيب", "احمد النقيب"])
-    & ~filters.edited
+    & ~filters.private
 )
 async def elnqyb(client: Client, message: Message):
     await message.reply_photo(
