@@ -58,22 +58,22 @@ REPLY_MESSAGE_BUTTONS = [
 
 
     
-@app.on_message(filters.command(["✭ قسم الاذاعه"], "") & SUDOERS)
+@app.on_message(filters.command(["✭ قسم الاذاعه"]) & SUDOERS)
 async def cast(client: app, message):
     kep = ReplyKeyboardMarkup([["✭ اذاعه عام","✭ اذاعه بالتوجيه"],["✭ رجوع"]], resize_keyboard=True)
     await message.reply_text("**أهلا بك عزيزي المطور **\n**هنا قسم الاذاعه تحكم بالازار**", reply_markup=kep)
     
-@app.on_message(filters.command(["✭ السورس"], "") & SUDOERS)
+@app.on_message(filters.command(["✭ السورس"]) & SUDOERS)
 async def cast(client: app, message):
     kep = ReplyKeyboardMarkup([["✭ قـنـاة الـسـورس","✭ للتواصل معنآ"], ["✭ مطور السورس"], ["✭ رجوع"]], resize_keyboard=True)
     await message.reply_text("**أهلا بك عزيزي المطور **\n**هنا قسم السورس تحكم بالازار**", reply_markup=kep)
     
-@app.on_message(filters.command(["✭ قسم المطورين"], "") & SUDOERS)
+@app.on_message(filters.command(["✭ قسم المطورين"]) & SUDOERS)
 async def cast(client: app, message):
     kep = ReplyKeyboardMarkup([["✭ مـطـوريـنـك","✭ للتواصل معنآ"],  ["✭ رجوع"]], resize_keyboard=True)
     await message.reply_text("**أهلا بك عزيزي المطور **\n**هنا قسم المطورين تحكم بالازار**", reply_markup=kep)
 
-@app.on_message(filters.command(["✭ قسم الجروبات"], "") & SUDOERS)
+@app.on_message(filters.command(["✭ قسم الجروبات"]) & SUDOERS)
 async def cast(client: app, message):
     kep = ReplyKeyboardMarkup([["✭ الجروبات المحظوره","✭ الاحصائيات","✭ حـظـر الـجـروبـات"], ["✭ رجوع","✭ جـروبـاتـك النـشـطـه"]], resize_keyboard=True)
     await message.reply_text("**أهلا بك عزيزي المطور **\n**هنا قسم الجروبات تحكم بالازار**", reply_markup=kep)
@@ -147,7 +147,7 @@ def reply_to_HEY(Client, message):
 
 
 
-@app.on_message(command("رتبتي") & filters.group & ~filters.edited)
+@app.on_message(command("رتبتي") & filters.group)
 def forward(client: Client, message: Message):
   chat_id = message.chat.id
   user_id = message.from_user.id
@@ -232,7 +232,7 @@ async def yas(client, message):
 
 
 
-@app.on_message(filters.regex("✭ المحـظـوريـن") & filters.private & filters.private & SUDOERS)
+@app.on_message(filters.regex("✭ المحـظـوريـن")  & filters.private & SUDOERS)
 async def italy(client: Client, message: Message):
     usr = await client.get_users(message.from_user.id)
     name = usr.first_name
