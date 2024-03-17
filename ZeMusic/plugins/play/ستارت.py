@@ -9,11 +9,7 @@ import random
 from strings.filters import command
 
 
-@app.on_message(
-    command(["am"])
-    & filters.group
-    & filters.private 
-)
+@app.on_message(filters.command(["AM"]) & filters.private & ~BANNED_USERS)
 async def iddd(client, message):
     if message.chat.id in iddof:
       return
