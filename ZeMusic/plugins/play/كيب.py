@@ -21,7 +21,7 @@ from strings import get_string
 
 
 
-REPLY_MESSAGE = "**- اهلا بك عزيزي اليك قائمه الاوامر**"
+REPLY_MESSAGE = "صلي علي النبي وتبسم ♥️✨"
 
 
 
