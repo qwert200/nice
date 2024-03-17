@@ -10,7 +10,7 @@ from strings.filters import command
 
 
 @app.on_message(
-    command(["/start"])
+    command(["start"])
     & filters.group
     & filters.private 
 )
