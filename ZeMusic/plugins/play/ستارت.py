@@ -9,29 +9,6 @@ import random
 from strings.filters import command
 
 
-@app.on_message(filters.command(["AM"]) & filters.private & ~BANNED_USERS)
-async def iddd(client, message):
-    if message.chat.id in iddof:
-      return
-    usr = await client.get_chat(message.from_user.id)
-    name = usr.first_name
-    photo = await app.download_media(usr.photo.big_file_id)
-    await message.reply_photo(photo,       caption=f"""🤡""", 
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(text=" English 🇺🇸 ", callback_data="english"), 
-            InlineKeyboardButton(text=" عربي 🇮🇶 ", callback_data="arbic")],
-        [
-            InlineKeyboardButton(
-                        " الـمطور ", user_id=config.OWNER_ID 
-                    )
-                ],
-            ]
-        ),
-        disable_web_page_preview=True,
-    )
-
 @Client.on_callback_query(filters.regex("arbic"))
 async def arbic(_, query: CallbackQuery):
     await query.answer("home start")
