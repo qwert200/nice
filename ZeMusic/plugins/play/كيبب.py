@@ -213,7 +213,6 @@ async def italy(client: Client, message: Message):
 @app.on_message(
     command(["مطور البوت","مطور"])
     & filters.group
-    & ~filters.edited
 )
 async def yas(client, message):
     usr = await client.get_chat({OWNER_ID})
@@ -251,7 +250,7 @@ async def italy(client: Client, message: Message):
                     
 
 
-@app.on_message(filters.regex("✭ مـطـوريـنـك") & filters.private & filters.private & SUDOERS)
+@app.on_message(filters.regex("✭ مـطـوريـنـك") & filters.private & SUDOERS)
 async def italy(client: Client, message: Message):
     usr = await client.get_users(message.from_user.id)
     name = usr.first_name
