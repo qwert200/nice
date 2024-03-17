@@ -18,7 +18,6 @@ from os import getenv
 
 OWNER_ID = getenv("OWNER_ID")
 OWNER_USER_NAME = getenv("OWNER_USER_NAME")
- 𝙰𝙻𝙼𝙾𝚁𝚃𝙰𝙶𝙴𝙻 = getenv(" 𝙰𝙻𝙼𝙾𝚁𝚃𝙰𝙶𝙴𝙻")
 
 OWNER = getenv("OWNER")
 
